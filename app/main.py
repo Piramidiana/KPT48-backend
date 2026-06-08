@@ -1,4 +1,8 @@
 from fastapi import FastAPI
+from app.database.mysql import Base, engine
+from app.models import User, Event, TicketRegistration  
+
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="KPT48 Theater Ticketing API",
