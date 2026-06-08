@@ -1,9 +1,10 @@
-from app.database.mongo import mongodb
+from app.database.mysql import engine
 
 try:
-    print(mongodb.list_collection_names())
+    # Membuka koneksi ke MySQL
+    connection = engine.connect()
 
-    print("MongoDB Connected!")
+    print("MySQL Connected!")
 
     # Menutup koneksi
     connection.close()
